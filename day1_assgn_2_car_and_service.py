@@ -54,4 +54,4 @@ s1.find_cars_by_year(2013)
 new_car_list=[car1,car2,car4]
 s1.add_cars(new_car_list)
 s1.get_car_list()
-s1.remove_cars_from_carnataka()
+s1.remove_cars_from_karnataka()
