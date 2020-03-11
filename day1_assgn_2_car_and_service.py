@@ -1,6 +1,4 @@
-
 #DSA-Assgn-2
-
 class Car:
     def __init__(self,model,year,registration_number):
         self.__model=model
@@ -30,15 +28,15 @@ class Service:
             
     def find_cars_by_year(self,year):
         car_list_by_year=[]
-        for car in car_list:
+        for car in self.__car_list:
             if car.get_year()==year:
-                car_list_by_year.append(car)
+                car_list_by_year.append(car.get_model())
         if len(car_list_by_year)>0:
             return car_list_by_year
         else:
              return None
-    def add_cars(self,new_cars_list):
-        self.__car_list=self.__car_list+new_cars_list
+    def add_cars(self,new_car_list):
+        self.__car_list.extend(new_car_list)
         self.__car_list.sort(key=lambda x:x.get_year())
         
     def remove_cars_from_karnataka(self):
@@ -52,14 +50,8 @@ car5=Car("Amaze",2014,"KL07 4332")
 #Add different values to the list and test the program
 car_list=[car3, car5]
 s1=Service(car_list)
-s1.get_car_list()
-
-car_list_by_year=s1.find_cars_by_year(2013)
-print(car_list_by_year)
-new_cars_list=[car1,car2,car4]
-s1.add_cars(new_cars_list)
-print("after")
+s1.find_cars_by_year(2013)
+new_car_list=[car1,car2,car4]
+s1.add_cars(new_car_list)
 s1.get_car_list()
 s1.remove_cars_from_carnataka()
-print("Final")
-s1.get_car_list()
